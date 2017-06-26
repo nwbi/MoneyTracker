@@ -23,6 +23,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:hint="@string/name_hint" />
 
         <EditText
@@ -32,6 +33,7 @@
             android:textSize="22sp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:hint="@string/price_hint" />
 
         <EditText
@@ -39,7 +41,8 @@
             android:textSize="22sp"
             android:layout_width="12dp"
             android:layout_height="wrap_content"
-            android:hint="@string/ruble_symbol" />
+            android:gravity="center_vertical"
+            android:hint="@string/rouble" />
 
         <TextView
             android:id="@+id/add"
@@ -49,6 +52,7 @@
             android:paddingEnd="@dimen/margin_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="+"
             tools:ignore="HardcodedText" />
     </LinearLayout>

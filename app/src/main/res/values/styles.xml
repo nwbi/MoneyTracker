@@ -8,4 +8,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="WhiteStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="NumberStyles">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="RoubleStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="AddStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingEnd">@dimen/margin_l</item>
+        <item name="android:paddingStart">@dimen/margin_l</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="NameStyles">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
 </resources>
