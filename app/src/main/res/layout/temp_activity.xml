@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.leskovets.moneytracker.TempActivity">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="7dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:background="@android:color/transparent"
+            android:textSize="22sp"
+            android:maxLines="1"
+            android:inputType="text"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/name_hint" />
+
+        <EditText
+            android:id="@+id/number"
+            android:background="@android:color/transparent"
+            android:inputType="number"
+            android:textSize="22sp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/price_hint" />
+
+        <EditText
+            android:background="@android:color/transparent"
+            android:textSize="22sp"
+            android:layout_width="12dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/rouble" />
+
+        <TextView
+            android:id="@+id/add"
+            android:enabled="false"
+            android:textSize="30sp"
+            android:paddingStart="@dimen/margin_l"
+            android:paddingEnd="@dimen/margin_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="+"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</FrameLayout>

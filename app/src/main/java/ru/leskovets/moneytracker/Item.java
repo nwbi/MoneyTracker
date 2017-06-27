@@ -12,4 +12,6 @@ package ru.leskovets.moneytracker;
             this.name = name;
             this.price = price;
         }
+
+
     }

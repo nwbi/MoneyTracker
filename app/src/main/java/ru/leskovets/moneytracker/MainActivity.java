@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items);
+        final TextView add = (TextView) findViewById(R.id.add);
         final RecyclerView items = (RecyclerView) findViewById(R.id.items);
         items.setAdapter(new ItemsAdapter());
 
@@ -72,5 +73,15 @@ public class MainActivity extends AppCompatActivity {
             name = (TextView) itemView.findViewById(R.id.name);
             price = (TextView) itemView.findViewById(R.id.price);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 }
