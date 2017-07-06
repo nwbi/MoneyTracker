@@ -17,14 +17,41 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView add;
+    EditText name;
+    EditText number;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items);
-        final TextView add = (TextView) findViewById(R.id.add);
+        add = (TextView) findViewById(R.id.add);
+        name = (EditText) findViewById(R.id.name);
+        number = (EditText) findViewById(R.id.number);
         final RecyclerView items = (RecyclerView) findViewById(R.id.items);
         items.setAdapter(new ItemsAdapter());
 
+
+        TextWatcher watcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                add.setEnabled(!TextUtils.isEmpty(name.getText().toString().trim()) && !TextUtils.isEmpty(number.getText().toString().trim()));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+        };
+
+        name.addTextChangedListener(watcher);
+        number.addTextChangedListener(watcher);
     }
 
     private class ItemsAdapter extends RecyclerView.Adapter<ItemViewHolder> {
