@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="368dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_pattern"
-    android:padding="16dp"
-    android:orientation="horizontal">
+
+    android:orientation="horizontal"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/name"
-        android:background="#fcc31e"
+        style="@style/NameStyles"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_weight="1"
+        android:background="#fcc31e"
         android:hint="@string/name_hint"
         android:inputType="text"
-        android:maxLines="1"
-        style="@style/NameStyles" />
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/price"
+        style="@style/NumberStyles"
         android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/price_hint"
-        style="@style/NumberStyles" />
+        android:layout_height="40dp"
+        android:hint="@string/price_hint" />
 
     <EditText
+        style="@style/RoubleStyle"
         android:layout_width="12dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:gravity="center_vertical"
-        android:hint="@string/rouble"
-        style="@style/RoubleStyle" />
+        android:hint="@string/rouble" />
 
     <TextView
         android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/AddStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:enabled="false"
+        android:gravity="center_vertical"
         android:text="+"
-        tools:ignore="HardcodedText"
-        style="@style/AddStyle" />
+        tools:ignore="HardcodedText" />
 </LinearLayout>

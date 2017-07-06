@@ -6,16 +6,12 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by yuril on 27.06.2017.
- */
-
 public class WasherEdit {
 
 
 //    final TextView add = (TextView) findViewById(R.id.add);
 //    final EditText name = (EditText) findViewById(R.id.name);
-//    final EditText number = (EditText) findViewById(R.id.price);
+//    final EditText price = (EditText) findViewById(R.id.price);
 //
 //    TextWatcher watcher = new TextWatcher() {
 //        @Override
@@ -35,7 +31,7 @@ public class WasherEdit {
 //    };
 //
 //        name.addTextChangedListener(watcher);
-//        number.addTextChangedListener(watcher);
+//        price.addTextChangedListener(watcher);
 
 }
 
