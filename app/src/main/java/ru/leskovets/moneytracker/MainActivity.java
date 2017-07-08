@@ -89,8 +89,19 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             final ItemsFragment fragment = new ItemsFragment();
             Bundle args = new Bundle();
-            args.putString(ItemsFragment.ARG_TYPE, Item.TYPE_EXPENSE);
-            fragment.setArguments(args);
+
+            switch (position) {
+                case 0:
+                    args.putString(ItemsFragment.ARG_TYPE, Item.TYPE_EXPENSE);
+                    fragment.setArguments(args);
+                    return fragment;
+                case 1:
+                    args.putString(ItemsFragment.ARG_TYPE, Item.TYPE_INCOME);
+                    fragment.setArguments(args);
+                    return fragment;
+                case 2:
+                    return new BalanceFragment();
+            }
             return fragment;
         }
 
