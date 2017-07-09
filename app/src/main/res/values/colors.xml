@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorTextBGround">#84c0c5</color>
     <color name="colorTextColor">#FFFFFF</color>
+    <color name="colorTabBack">#7dc9b0</color>
+    <color name="colorIndicator">#ffffff</color>
+    <color name="colorActive">#ffffff</color>
+    <color name="colorInactive">#dbece6</color>
 </resources>
