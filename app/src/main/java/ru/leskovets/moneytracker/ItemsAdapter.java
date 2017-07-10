@@ -19,7 +19,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        final Item item = items.get(position);
+        Item item = items.get(position);
         holder.name.setText(item.name);
         holder.price.setText(String.valueOf(item.price));
     }
