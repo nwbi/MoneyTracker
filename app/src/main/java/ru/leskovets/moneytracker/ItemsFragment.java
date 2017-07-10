@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 import ru.leskovets.moneytracker.API.LSApi;
+import ru.leskovets.moneytracker.API.AddResult;
 
 public class ItemsFragment extends Fragment {
     public static final int LODER_ITEMS = 0;
@@ -45,6 +46,41 @@ public class ItemsFragment extends Fragment {
 
         loadItems();
     }
+
+    private void addItem() {
+        getLoaderManager().initLoader(LODER_ADD, null, new LoaderManager.LoaderCallbacks<AddResult>() {
+
+            @Override
+            public Loader<AddResult> onCreateLoader(int id, Bundle args) {
+                return new AsyncTaskLoader<AddResult>(getContext()) {
+                    @Override
+                    public AddResult loadInBackground() {
+                        try {
+                            return api.add("Milk", 60, type).execute().body();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return null;
+                        }
+                    }
+                };
+            }
+
+            @Override
+            public void onLoadFinished(Loader<AddResult> loader, AddResult data) {
+                if (data == null) {
+                    Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
+                } else {
+                    adapter.clear();
+                    adapter.addAll(data);
+                }
+            }
+
+            @Override
+            public void onLoaderReset(Loader<AddResult> loader) {
+            }
+        });
+    }
+
 
     private void loadItems() {
         getLoaderManager().initLoader(LODER_ITEMS, null, new LoaderManager.LoaderCallbacks<List<Item>>() {
