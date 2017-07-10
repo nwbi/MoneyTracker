@@ -9,50 +9,37 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-class ItemsAdapter extends RecyclerView.Adapter<ItemViewHolder> {
+class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
+    final List<Item> items = new ArrayList<>();
 
+    @Override
+    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item, null));
+    }
 
-        final List<Item> items = new ArrayList<>();
+    @Override
+    public void onBindViewHolder(ItemViewHolder holder, int position) {
+        Item item = items.get(position);
+        holder.name.setText(item.name);
+        holder.price.setText(String.valueOf(item.price));
+    }
 
-        ItemsAdapter() {
-            items.add(new Item("milk Prostokvashino 3,2%", 60));
-            items.add(new Item("apple", 50));
-            items.add(new Item("fun maker", 100));
-            items.add(new Item("lemon 1 kg", 40));
-            items.add(new Item("fruits 3 kg", 1000));
-            items.add(new Item("red fish", 670));
-            items.add(new Item("bread", 50));
-            items.add(new Item("rice 1 sht.", 33));
-            items.add(new Item("icecream Korovka", 58));
-            items.add(new Item("gun", 4550));
-            items.add(new Item("car Lada Granda, red color", 100000));
-            items.add(new Item("juice", 50));
-            items.add(new Item("mouse", 750));
-            items.add(new Item("android super smartfon Lenovo K5 Vibe", 4550));
-        }
+    @Override
+    public int getItemCount() {
+        return items.size();
+    }
 
-        @Override
-        public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item, null));
-        }
+    public void clear() {
+        items.clear();
+    }
 
-        @Override
-        public void onBindViewHolder(ItemViewHolder holder, int position) {
-            final Item item = items.get(position);
-            holder.name.setText(item.name);
-            holder.price.setText(String.valueOf(item.price));
-        }
-
-        @Override
-        public int getItemCount() {
-            return items.size();
-        }
+    public void addAll(List<Item> items) {
+        this.items.addAll(items);
+        notifyDataSetChanged();
     }
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView name;
-        public TextView price;
+        private final TextView name, price;
 
         ItemViewHolder(View itemView) {
             super(itemView);
@@ -60,3 +47,4 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemViewHolder> {
             price = (TextView) itemView.findViewById(R.id.price);
         }
     }
+}
