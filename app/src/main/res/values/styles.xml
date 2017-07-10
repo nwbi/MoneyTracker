@@ -40,4 +40,13 @@
 
     </style>
 
+    <style name="addStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="addButton">
+        <item name="android:textSize">30sp</item>
+    </style>
+
 </resources>
