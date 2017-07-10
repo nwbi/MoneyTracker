@@ -34,7 +34,7 @@ public class LSApp extends Application {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://stavimdveri.getsandbox.com")
+                .baseUrl("http://schoolandroid.getsandbox.com")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
