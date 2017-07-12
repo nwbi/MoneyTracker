@@ -9,6 +9,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.leskovets.moneytracker.API.AddResult;
+
 class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
     final List<Item> items = new ArrayList<>();
 
@@ -35,6 +37,11 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     public void addAll(List<Item> items) {
         this.items.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void add(AddResult data) {
+        data.isSuccess();
         notifyDataSetChanged();
     }
 

@@ -70,8 +70,7 @@ public class ItemsFragment extends Fragment {
                 if (data == null) {
                     Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
                 } else {
-                    adapter.clear();
-                    adapter.addAll(data);
+                    adapter.add(data);
                 }
             }
 
