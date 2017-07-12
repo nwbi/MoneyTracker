@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -28,19 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         final ViewPager pages = (ViewPager) findViewById(R.id.pages);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
         pages.setAdapter(new MainPagerAdapter());
         tabs.setupWithViewPager(pages);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
 
     private class MainPagerAdapter extends FragmentPagerAdapter {
         private final String[] titles;
@@ -54,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             final ItemsFragment fragment = new ItemsFragment();
             Bundle args = new Bundle();
-
             switch (position) {
                 case 0:
                     args.putString(ItemsFragment.ARG_TYPE, Item.TYPE_EXPENSE);
@@ -67,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     return new BalanceFragment();
             }
-            return fragment;
+            return null;
         }
 
         @Override
