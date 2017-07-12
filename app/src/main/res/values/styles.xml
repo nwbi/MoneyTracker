@@ -34,9 +34,7 @@
 
     <style name="AddStyle">
         <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingEnd">@dimen/margin_l</item>
-        <item name="android:paddingStart">@dimen/margin_l</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:background">#7dc9b0</item>
     </style>
 

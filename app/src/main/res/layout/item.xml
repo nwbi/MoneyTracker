@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
     android:orientation="horizontal"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/name"
         style="@style/NameStyles"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_weight="1"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:hint="@string/name_hint"
         android:inputType="text"
         android:maxLines="1" />
@@ -20,24 +18,16 @@
     <TextView
         android:id="@+id/price"
         style="@style/NumberStyles"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:hint="@string/price_hint" />
-
-    <EditText
-        style="@style/RoubleStyle"
-        android:layout_width="12dp"
-        android:layout_height="40dp"
-        android:gravity="center_vertical"
-        android:hint="@string/rouble" />
 
     <TextView
         android:id="@+id/add"
         style="@style/AddStyle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:enabled="false"
-        android:gravity="center_vertical"
         android:text="+"
         tools:ignore="HardcodedText" />
 </LinearLayout>
