@@ -7,4 +7,6 @@
     <dimen name="margin_little">5dp</dimen>
     <dimen name="margin_medium">13dp</dimen>
     <dimen name="FAB">56dp</dimen>
+    <dimen name="FAB_right">18dp</dimen>
+    <dimen name="FAB_botton">22dp</dimen>
 </resources>
